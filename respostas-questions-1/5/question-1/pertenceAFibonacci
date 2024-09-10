@@ -1,0 +1,30 @@
+function pertenceAFibonacci(numero) {
+    if (numero < 0) return false;
+
+    let a = 0, b = 1;
+
+    if(numero === a || numero ===b) return true;
+
+    while (b < numero) { 
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return b === numero;
+}
+
+function main () {
+
+    let numero = prompt("Informe um número para verificar se pertence à sequência de Fibonnacci:");
+    numero = parseInt(numero); // Converte a entrada para um número inteiro
+
+    // Verifica se o número pertence à sequência de Fibonacci e exibe a mensagem
+    if (pertenceAFibonacci(numero)) {
+        console.log("O número " + numero + " pertence à sequência de Fibonnaci.");
+    } else {
+        console.log("O número " + numero + " não pertence à sequência de Fibonacci.");
+    }
+}
+
+main();
